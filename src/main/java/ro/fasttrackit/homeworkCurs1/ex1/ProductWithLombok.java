@@ -7,8 +7,8 @@ import java.util.List;
 @Data
 @Builder
 public class ProductWithLombok {
-  String name;
-  int price;
-  List<Category> categories;
-  String description;
+  private String name;
+  private int price;
+  private List<Category> categories;
+  private String description;
 }

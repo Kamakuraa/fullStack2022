@@ -29,7 +29,7 @@ public class Product {
   }
 
   public List<Category> getCategories() {
-    return categories;
+    return new ArrayList<> (categories);
   }
 
   public String getDescription() {
