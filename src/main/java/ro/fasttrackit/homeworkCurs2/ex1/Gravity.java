@@ -1,4 +1,4 @@
-package ro.fasttrackit.homeworkCurs2;
+package ro.fasttrackit.homeworkCurs2.ex1;
 
 public enum Gravity {
   MERCURY (0.3),
@@ -41,11 +41,20 @@ public enum Gravity {
     return ratio;
   }
 
-  public double weightTerra(double weight){
+  double weightTerra(double weight) {
     return ratio * weight;
   }
 
   public static void main(String[] args) {
-    System.out.println (Gravity.NEPTUNE.weightTerra (2));
+    if (args.length != 1) {
+      System.err.println ("Usage: Java Planet<earth_weight>");
+      System.exit (-1);
+    }
+
+    double weight = Double.parseDouble (args[0]);
+    for (Gravity g : Gravity.values ()) {
+      System.out.printf ("your weight on %s is %f%n", g, g.weightTerra (weight));
+    }
+
   }
 }
