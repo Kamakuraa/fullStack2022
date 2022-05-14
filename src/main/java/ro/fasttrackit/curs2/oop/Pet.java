@@ -6,7 +6,7 @@ import lombok.ToString;
 public abstract class Pet {
   private final String name;
 
-  protected Pet(String name) {
+  public Pet(String name) {
     this.name = name;
   }
 
@@ -18,20 +18,7 @@ public abstract class Pet {
 }
 
 interface Top {
-
-  int field = 1;
-
-  int getAge();
-  default void process() {
-    System.out.println (field);
-    subProb ();
-  }
-
-  private void subProb() {
-    System.out.println ("private method in interface");
-  }
 }
-
 
 interface Left extends Top {
 }
@@ -42,10 +29,10 @@ interface Right extends Top {
 interface Down extends Left, Right {
 }
 
-interface BusinessOperation<T>{
-  default T execute(){
-    validate();
-    return doExecute();
+interface BusinessOperation<T> {
+  default T execute() {
+    validate ();
+    return doExecute ();
   }
 
   T doExecute();

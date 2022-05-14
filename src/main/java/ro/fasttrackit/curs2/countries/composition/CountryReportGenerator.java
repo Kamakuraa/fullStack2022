@@ -1,17 +1,20 @@
-package ro.fasttrackit.curs2.countries;
+package ro.fasttrackit.curs2.countries.composition;
 
+import lombok.RequiredArgsConstructor;
+import ro.fasttrackit.curs2.countries.Country;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public abstract class CountryReportGenerator {
 
-  abstract List<Country> readCountries();
+@RequiredArgsConstructor
+public class CountryReportGenerator {
+  private final CountryProvider countryProvider;
 
-  public void generateReport(String outputFile) throws IOException{
-    List<Country> countries = readCountries ();
+  public void generateReport(String outputFile) throws IOException {
+    List<Country> countries = countryProvider.readCountries ();
     generateReport (countries, outputFile);
   }
 
@@ -28,7 +31,8 @@ public abstract class CountryReportGenerator {
       writer.write (line);
       writer.newLine ();
     } catch (IOException e) {
-      throw new RuntimeException ();
+      throw new RuntimeException (e);
     }
   }
 }
+

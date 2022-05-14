@@ -45,16 +45,4 @@ public enum Gravity {
     return ratio * weight;
   }
 
-  public static void main(String[] args) {
-    if (args.length != 1) {
-      System.err.println ("Usage: Java Planet<earth_weight>");
-      System.exit (-1);
-    }
-
-    double weight = Double.parseDouble (args[0]);
-    for (Gravity g : Gravity.values ()) {
-      System.out.printf ("your weight on %s is %f%n", g, g.weightTerra (weight));
-    }
-
-  }
 }

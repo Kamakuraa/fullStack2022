@@ -4,29 +4,31 @@ import lombok.Data;
 
 public interface Pet {
   String name();
-  String sayCeva();
+
+  String saySomething();
 }
 
 @Data
-class Dog implements Pet{
+class Dog implements Pet {
 
-  private String name;
+  private final String name;
+
 
   @Override
   public String name() {
-    return this.name;
+    return null;
   }
 
   @Override
-  public String sayCeva() {
-    return "woof";
+  public String saySomething() {
+    return null;
   }
 }
 
-record Cat(String name) implements Pet{
 
+record Cat(String name) implements Pet {
   @Override
-  public String sayCeva() {
+  public String saySomething() {
     return "miau";
   }
 }

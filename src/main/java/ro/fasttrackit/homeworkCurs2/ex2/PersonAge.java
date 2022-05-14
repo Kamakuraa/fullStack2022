@@ -1,6 +1,6 @@
 package ro.fasttrackit.homeworkCurs2.ex2;
 
-public enum AgePerson {
+public enum PersonAge {
   CHILD(0, 12),
   YOUNG(13, 29),
   MATURE(30, 50),
@@ -9,7 +9,7 @@ public enum AgePerson {
   private final int start;
   private final int end;
 
-  AgePerson(int start, int end) {
+  PersonAge(int start, int end) {
     this.start = start;
     this.end = end;
   }
