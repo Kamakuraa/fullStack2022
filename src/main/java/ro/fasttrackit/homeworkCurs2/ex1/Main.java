@@ -11,6 +11,8 @@ public class Main{
       Gravity.EUROPA,
       Gravity.JUPITER
     ));
+    System.out.println (planetService.getGravityBodies ());
+
     System.out.println (planetService.getGravityWithLargeGravity (0.5));
   }
 }

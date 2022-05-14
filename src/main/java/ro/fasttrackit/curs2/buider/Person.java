@@ -13,7 +13,7 @@ public class Person {
     this.married = married;
   }
 
-  public Person() {
+  public Person(String alex, String bratu, int i) {
   }
 
   public String getName() {
@@ -37,7 +37,7 @@ public class Person {
   }
 
   public static class PersonBuilder {
-    private final Person person = new Person ();
+    private final Person person = new Person ("Alex", "Bratu", 36);
 
     public PersonBuilder name(String name) {
       person.name = name;

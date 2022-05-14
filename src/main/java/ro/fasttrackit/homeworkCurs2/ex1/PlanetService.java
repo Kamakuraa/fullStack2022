@@ -2,6 +2,7 @@ package ro.fasttrackit.homeworkCurs2.ex1;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,6 +13,10 @@ public class PlanetService {
     if (gravities != null) {
       this.gravityList.addAll (gravities);
     }
+  }
+
+  public List<Gravity> getGravityBodies() {
+    return Collections.unmodifiableList (gravityList);
   }
 
   public List<Gravity> getGravityWithLargeGravity(double gravity) {
