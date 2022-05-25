@@ -3,7 +3,7 @@ package ro.fasttrackit.curs2.oop;
 import lombok.ToString;
 
 @ToString
-public abstract class Pet {
+abstract class Pet {
   private final String name;
 
   public Pet(String name) {
