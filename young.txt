@@ -1,0 +1,8 @@
+Person{firstName='Delena', lastName='Spitler', age=23}
+Person{firstName='Arnulfo', lastName='Cavalieri', age=12}
+Person{firstName='Gil', lastName='Rasmussen', age=23}
+Person{firstName='Azalee', lastName='Weimar', age=24}
+Person{firstName='Tempie', lastName='Gautier', age=22}
+Person{firstName='Reena', lastName='Stach', age=12}
+Person{firstName='Shannan', lastName='Ragland', age=23}
+Person{firstName='Cristine', lastName='Renfrew', age=21}
