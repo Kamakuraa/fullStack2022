@@ -23,7 +23,7 @@ public class Java8Features {
   private static void optional() {
     System.out.println ("=======optional");
     Optional<String> myName = names ().stream ()
-      .filter (a -> a.startsWith ("A"))
+      .filter (a -> a.startsWith ("W"))
       .findFirst ()
       .map (name -> name.toUpperCase ())
       .map (Java8Features::abbreviate);
