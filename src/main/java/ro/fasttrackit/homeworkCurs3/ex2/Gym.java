@@ -33,10 +33,10 @@ public class Gym {
   }
 
   public Subscriptions findSubscriptionByName(String memberName) {
-    return subscriptions.stream()
-      .filter(subscription -> subscription.getGymMember().getName().equals(memberName))
-      .findFirst()
-      .orElse(new Subscriptions());
+    return subscriptions.stream ()
+      .filter (subscription -> subscription.getGymMember ().getName ().equals (memberName))
+      .findFirst ()
+      .orElse (new Subscriptions ());
   }
 
   public int getMaximumAge() {
@@ -69,26 +69,12 @@ public class Gym {
     gymMember.setExpireDate (currentTime);
   }
 
-
   private List<Integer> getMembersAge() {
     LocalDate todayDate = LocalDate.now ();
 
     return this.subscriptions.stream ()
       .map (subscriptions1 -> Period.between (subscriptions1.getGymMember ().getBirthdate (), todayDate).getYears ())
       .collect (Collectors.toList ());
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass () != o.getClass ()) return false;
-    Gym gym = (Gym) o;
-    return Objects.equals (subscriptions, gym.subscriptions);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash (subscriptions);
   }
 
   @Override

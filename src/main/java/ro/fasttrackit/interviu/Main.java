@@ -2,7 +2,6 @@ package ro.fasttrackit.interviu;
 
 import ro.fasttrackit.homeworkCurs2.ex2.Person;
 import ro.fasttrackit.homeworkCurs2.ex2.composition.PersonProvider;
-import ro.fasttrackit.homeworkCurs3.ex1.People;
 
 import java.util.List;
 
