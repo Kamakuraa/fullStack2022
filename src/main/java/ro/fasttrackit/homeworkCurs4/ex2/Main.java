@@ -1,5 +1,8 @@
 package ro.fasttrackit.homeworkCurs4.ex2;
 
+import java.time.Instant;
+import java.util.*;
+
 public class Main {
   public static void main(String[] args) {
     LogicalSwitch logicalSwitch = new LogicalSwitch ();
@@ -8,6 +11,5 @@ public class Main {
 
     System.out.println (logicalSwitch.goTo (person));
     System.out.println (person.getName ().startsWith ("A"));
-//    System.out.println (logicalSwitch.getLogicalSwitch ());
   }
 }

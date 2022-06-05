@@ -6,18 +6,26 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class StudentService {
-  private final List<Student> student = new ArrayList<> ();
+  private final List<Student> students = new ArrayList<> ();
 
   public StudentService(List<Student> student) {
-    this.student.addAll (student);
+    this.students.addAll (student);
   }
 
-  public List<Student> getStudent() {
-    return new ArrayList<> (student);
+  public List<Student> getStudents() {
+    return new ArrayList<> (students);
+  }
+
+  public String getStudentPlace(Student student) {
+    return switch (students.indexOf (student)) {
+      case 0, 1, 2 -> "1st grade";
+      case 3 -> "5th grade";
+      default -> "7th grade";
+    };
   }
 
   public String getNameAndAverageGrade() {
-    return student.stream ()
+    return students.stream ()
       .collect (Collectors.teeing (
         Collectors.mapping (Student::getName, Collectors.toList ()),
         Collectors.averagingInt (Student::getGrade),
@@ -26,13 +34,13 @@ public class StudentService {
   }
 
   public List<String> getStudentName() {
-    return student.stream ()
+    return students.stream ()
       .map (s -> s.getName ())
       .collect (Collectors.toList ());
   }
 
   public List<String> allocateCourses() {
-    return student.stream ()
+    return students.stream ()
       .map (s -> s.getName () + " participa la curs  " + getRandomCourse ())
       .collect (Collectors.toList ());
   }
@@ -41,19 +49,19 @@ public class StudentService {
     Random random = new Random ();
 
     String firstCourse = """
-      "course" : "Math 101",
-      "semester" : 2
+      'course':%s,
+      'semester':%d
       """.formatted ("Math 101", 2);
 
 
     String secondCourse = """
-      "course" : "English",
-      "semester" : 2
+      'course':%s,
+      'semester':%d
       """.formatted ("English", 1);
 
     String thirdCourse = """
-      "course" : "Java",
-      "semester" : 2
+      'course':%s,
+      'semester':%d
       """.formatted ("JAVA", 2);
     List<String> courses = List.of (firstCourse, secondCourse, thirdCourse);
     return courses.get (random.nextInt (courses.size ()));

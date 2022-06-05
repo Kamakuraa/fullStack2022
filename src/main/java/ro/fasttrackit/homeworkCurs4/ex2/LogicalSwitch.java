@@ -9,11 +9,10 @@ import java.util.stream.Collectors;
 public class LogicalSwitch {
   private final Map<Predicate<Person>, Function<Person, String>> logicalSwitch = new LinkedHashMap<> ();
 
-
-//  logicalSwitch.put(person -> person.getAge () > 18, person -> person.hasVisa () + " in USA"),
-//    person -> person.getName ().startsWith ("A"), person -> person.hasVisa () + " in Australia"
-
-
+  public LogicalSwitch() {
+    logicalSwitch.put (person -> person.getAge () > 18, person -> person.hasVisa () + " in USA");
+    logicalSwitch.put (person -> person.getName ().startsWith ("A"), person -> person.hasVisa () + " in Australia");
+  }
   public String goTo(Person person) {
     return logicalSwitch.entrySet ().stream ()
       .filter (p -> p.getKey ().test (person) )
