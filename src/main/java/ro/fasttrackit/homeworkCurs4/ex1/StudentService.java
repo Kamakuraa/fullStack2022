@@ -27,21 +27,21 @@ public class StudentService {
   public String getNameAndAverageGrade() {
     return students.stream ()
       .collect (Collectors.teeing (
-        Collectors.mapping (Student::getName, Collectors.toList ()),
-        Collectors.averagingInt (Student::getGrade),
+        Collectors.mapping (Student::name, Collectors.toList ()),
+        Collectors.averagingInt (Student::grade),
         (names, average) -> names + " have an average grade of " + average
       ));
   }
 
   public List<String> getStudentName() {
     return students.stream ()
-      .map (s -> s.getName ())
+      .map (s -> s.name ())
       .collect (Collectors.toList ());
   }
 
   public List<String> allocateCourses() {
     return students.stream ()
-      .map (s -> s.getName () + " participa la curs  " + getRandomCourse ())
+      .map (s -> s.name () + " participa la curs  " + getRandomCourse ())
       .collect (Collectors.toList ());
   }
 
