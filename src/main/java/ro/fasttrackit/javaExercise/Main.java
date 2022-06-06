@@ -9,5 +9,9 @@ public class Main {
       .build ();
 
     System.out.println (pizzaNew);
+    String string = new String ("aaa");
+    String string1 = "aaa";
+    System.out.println (string.equals (string1));
+    System.out.println (string.substring (1, 3));
   }
 }

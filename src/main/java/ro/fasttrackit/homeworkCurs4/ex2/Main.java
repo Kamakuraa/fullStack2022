@@ -4,12 +4,12 @@ import java.time.Instant;
 import java.util.*;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     LogicalSwitch logicalSwitch = new LogicalSwitch ();
     Person person = new Person ("Alex", 20, "Bucuresti");
 
 
     System.out.println (logicalSwitch.goTo (person));
-    System.out.println (person.getName ().startsWith ("A"));
+    System.out.println (person.name ().startsWith ("A"));
   }
 }

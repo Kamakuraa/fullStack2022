@@ -10,8 +10,8 @@ public class LogicalSwitch {
   private final Map<Predicate<Person>, Function<Person, String>> logicalSwitch = new LinkedHashMap<> ();
 
   public LogicalSwitch() {
-    logicalSwitch.put (person -> person.getAge () > 18, person -> person.hasVisa () + " in USA");
-    logicalSwitch.put (person -> person.getName ().startsWith ("A"), person -> person.hasVisa () + " in Australia");
+    logicalSwitch.put (person -> person.age () > 18, person -> person.hasVisa () + " in USA");
+    logicalSwitch.put (person -> person.name ().startsWith ("A"), person -> person.hasVisa () + " in Australia");
   }
   public String goTo(Person person) {
     return logicalSwitch.entrySet ().stream ()
